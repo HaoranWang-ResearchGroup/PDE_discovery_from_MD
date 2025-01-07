@@ -18,13 +18,13 @@ group           H type 2
 displace_atoms  H move $(v_a0/2) 0 0 units box
 
 pair_style	eam/alloy
-pair_coeff	* * ../../Ni_H.alloy Ni H
+pair_coeff	* * Ni_H.alloy Ni H
 thermo		1000
 thermo_style    custom step temp press etotal ke pxx pyy pzz lx ly lz atoms
 timestep	0.001
  
-dump            1 all custom 50000 dump.NiH_expC_diffuse_800K_seed0.10ns id type x y z
-log             log.NiH_diffuse_expC_800K_seed0.10ns
+dump            1 all custom 50000 dump.NiH_expC_diffuse_800K.10ns id type x y z
+log             log.NiH_diffuse_expC_800K.10ns
 
 #####################################################create exponential profile of H concentration along z
 label           loop_a

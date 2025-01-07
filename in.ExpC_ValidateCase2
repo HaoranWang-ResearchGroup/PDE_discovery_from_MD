@@ -7,7 +7,7 @@ atom_style	atomic
 
 variable        a0 equal 3.566
 variable        T  equal 800.00
-variable        rand_seed equal 12 #######ceil(random(1,1000000000,10)/100000.0)
+variable        rand_seed equal ceil(random(1,1000000000,10)/100000.0)
 lattice 	fcc $(v_a0) orient x 1 0 0 orient y 0 1 0 orient z 0 0 1
 region 		main block $(-v_a0*5) $(v_a0*5) $(-v_a0*5) $(v_a0*5) $(-v_a0*80) $(v_a0*80) units box
 create_box 	2 main
@@ -19,13 +19,13 @@ group           H type 2
 displace_atoms  H move $(v_a0/2) 0 0 units box
 
 pair_style	eam/alloy
-pair_coeff	* * ../../Ni_H.alloy Ni H
+pair_coeff	* * Ni_H.alloy Ni H
 thermo		1000
 thermo_style    custom step temp press etotal ke pxx pyy pzz lx ly lz atoms
 timestep	0.001
  
-dump            1 all custom 50000 dump.NiH_expC_diffuse_800K_seed12.10ns id type x y z
-log             log.NiH_diffuse_expC_800K_seed12.10ns
+dump            1 all custom 50000 dump.NiH_expC_diffuse_800K.10ns id type x y z
+log             log.NiH_diffuse_expC_800K.10ns
 
 
 #####################################################create exponential profile of H concentration along z
@@ -69,7 +69,7 @@ unfix 1
 unfix 2
 
 group           H type 2
-read_data       ../data.center_layer_H_800K add append group deposit_H
+read_data       data.center_layer_H_800K add append group deposit_H
 delete_atoms    overlap 1.0 deposit_H Ni compress yes
 delete_atoms    overlap 2.0 deposit_H H compress yes
 
