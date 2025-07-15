@@ -24,13 +24,13 @@ Governing partial differential equations (PDEs) play a critical role in material
          - Each data is a 2D matrix: 
                - Axis 1: Position (z); dz = 1
                - Axis 2: Time(ns); dt = 100
-            (a) MC_0_boundary_flux.mat
+       1. MC_0_boundary_flux.mat
                - IC: c(z) = 0.2-0.001*z
                - BCs: j(z=0) = 0   and j(z=200) = 0 
-            (b) MC_delete.mat
+       2. MC_delete.mat
                - IC: c(z) = 0.1
                - BCs: j(z=0) = -0.000625      and j(z=200) = 0
-            (c) MC_deposit.mat
+       3. MC_deposit.mat
                - IC: c(z) = 0.0
                - BCs: j(z=0) = 0.0003125    and j(z=200) = 0
 
@@ -41,22 +41,22 @@ Governing partial differential equations (PDEs) play a critical role in material
          - Each data is a 2D matrix: 
                - Axis 1: Position (z); dz = 1
                - Axis 2: Time(ns); dt = 0.25 ns
-            (a) MD_0_boundary_flux.mat
+       1. MD_0_boundary_flux.mat
                - IC: c(z) = 1 -(1/160)*z
                - BCs: j(z=0) = 0   and j(z=160) = 0 
-            (b) MD_delete.mat
+       2. MD_delete.mat
                - IC: c(z) = 0.1
                - BCs: c(z=0) = 0 every 0.1 ns      and j(z=160) = 0
-            (c) MD_deposit.mat
+       3. MD_deposit.mat
                - IC: c(z) = 0.0
                - BCs: j(z=0) = 1/ns    and j(z=160) = 0
    3. LAMMPS files used for validation:
-         (a) in.LinearC_ValidateCase1: LAMMPS input file for Case 1
+      1. in.LinearC_ValidateCase1: LAMMPS input file for Case 1
             IC: linear initial c Profile
-         (b) in.ExpC_ValidateCase2: LAMMPS input file for Case 2
+      2. in.ExpC_ValidateCase2: LAMMPS input file for Case 2
             IC: exponential initial c Profile
-         (c) Ni_H.alloy: EAM Interatomic potential
-         (d) data.center_layer_H_800K: LAMMPS data file containing coordinates of H-atoms used for deposition simulations.
+      3. Ni_H.alloy: EAM Interatomic potential
+      4. data.center_layer_H_800K: LAMMPS data file containing coordinates of H-atoms used for deposition simulations.
 7. Desciption of parameters/variables and units:
    - c: "Concentration": dimensionless
    - j: "Flux": dimensionless for MC, 1/ns for MD
