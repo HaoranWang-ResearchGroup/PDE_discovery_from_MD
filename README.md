@@ -65,6 +65,6 @@ Governing partial differential equations (PDEs) play a critical role in material
    - Monte Carlo data are generated using Matlab from 10 simulations with different random seeds.
    - Molecular dynamics data are generated  from 10 simulations with different random seeds.
 9. Publication that uses this dataset:
-   - Journal: Proceedings of Royal Society A
+   - Journal: Proceedings of the Royal Society A: Mathematical, Physical, and Engineering Sciences
    - Title: Learning the Governing Partial Differential Equation of Solid Diffusion from Atomistic Simulations
    - Year: 2025
